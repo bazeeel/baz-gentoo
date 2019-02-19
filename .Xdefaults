@@ -1,13 +1,1 @@
-*.font: xft:Hack\ Nerd\ Font\ Mono:pixelsize=15
-*.scrollBar: false
-*.cursorBlink: true
-*.jumpScroll: true
-*.secondaryWheel: true
-*#transparent: true
-*.url-launcher: /usr/bin/firefox
-*.perl-ext-common: default,matcher,clipboard
-*.matcher.button: 1
-
-st.font: Liberation Mono:pixelsize=15:antialias=true:autohint=true;
-st.alpha: 200
-st.color0: #111
+.Xresources
