@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --bg-scale '/home/xeoncpu/Pictures/beach-by-the-sea-clouds-946343.jpg' 
