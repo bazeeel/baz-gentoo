@@ -21,3 +21,5 @@ if [ "$(stat -c %y "$HOME/.local/share/weatherreport" >/dev/null 2>&1 | awk '{pr
 	then getforecast && showweather
 	else showweather
 fi
+
+# curl -Ss 'https://wttr.in/?0&T&Q&lang=hu' | cut -c 16- | head -2 | xargs echo

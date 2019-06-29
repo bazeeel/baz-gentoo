@@ -1,9 +1,5 @@
 #!/bin/sh
 
-[ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
-[ -f ~/.Xdefaults ] && xrdb -merge ~/.Xdefaults
-
-xset r rate 200 50
+[ -f "$HOME/.xprofile" ] && . ~/.xprofile
 
 exec i3
-
