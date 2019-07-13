@@ -24,9 +24,12 @@ super + shift + e
 super + shift + w
 	discord
 super + w
-	$BROWSER
+	firefox
 super + shift + g
 	gimp
+#super + q
+ #      {kill,close}
+
 
 # Et cetera...
 super + grave
@@ -116,8 +119,8 @@ super + F1
 super + F3
 	displayselect
 # Hibernate
-super + F4
-	prompt 'Hibernate computer?' 'sudo systemctl suspend'
+#super + F4
+#	prompt 'Hibernate computer?' 'sudo systemctl suspend'
 # Restart/rescan wifi/eth networks
 super + F5
 	sudo -A systemctl restart NetworkManager
