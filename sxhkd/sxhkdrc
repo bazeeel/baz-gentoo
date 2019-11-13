@@ -14,7 +14,7 @@ super + n
 super + i
 	$TERMINAL -e htop
 super + y
-	$TERMINAL -e calcurse
+	$TERMINAL -e calcurse -D ~/.config/calcurse
 super + shift + a
 	$TERMINAL -e pulsemixer; pkill -RTMIN+10 i3blocks
 super + shift + c
@@ -24,12 +24,11 @@ super + shift + e
 super + shift + w
 	discord
 super + w
-	firefox
+	$BROWSER
 super + shift + g
-	gimp
-#super + q
- #      {kill,close}
-
+	subl3
+super + alt + p
+	telegram-desktop
 
 # Et cetera...
 super + grave
@@ -119,8 +118,8 @@ super + F1
 super + F3
 	displayselect
 # Hibernate
-#super + F4
-#	prompt 'Hibernate computer?' 'sudo systemctl suspend'
+super + F4
+	prompt 'Hibernate computer?' 'sudo systemctl suspend'
 # Restart/rescan wifi/eth networks
 super + F5
 	sudo -A systemctl restart NetworkManager

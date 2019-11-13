@@ -4,18 +4,18 @@
 # This config file will use environmental variables such as $BROWSER and $TERMINAL.
 # You can set these variables in ~/.profile or ~/.bash_profile if you have it as below:
 #
-#export FILE="ranger"
+# export FILE="ranger"
 # export TERMINAL="st"
 
-
 # #---Basic Definitions---# #
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
 gaps inner 15
 gaps outer 15
-#set $term st
+set $term --no-startup-id $TERMINAL
 set $mod Mod4
-set $BROWSER Navigator
-set $TERMINAL st
+
+#border_radius 0
+#smart_borders on
 
 # #---Dropdown Windows---# #
 # General dropdown window traits. The order can matter.
@@ -36,20 +36,21 @@ bar {
 	mode dock
 	modifier None
 
+colors {
+    background #2b2b2b
+    statusline #FFFFFF
+    separator  #666666
 
-	colors {
-        background #101010
-        statusline #ffffff
+    focused_workspace  #4C7899 #285577 #FFFFFF
+    active_workspace   #333333 #222222 #FFFFFF
+    inactive_workspace #333333 #222222 #888888
+    urgent_workspace   #2F343A #900000 #FFFFFF
 
-        focused_workspace  #ffffff #285577
-        active_workspace   #ffffff #333333
-        inactive_workspace #888888 #222222
-        urgent_workspace   #ffffff #900000
-    }
+   }
 }
 
 # #---Basic Bindings---# #
-bindsym $mod+Shift+Return	exec --no-startup-id samedir
+bindsym $mod+Shift+Return	exec --no-startup-id $term
 
 bindsym $mod+Shift+space 	floating toggle
 bindsym $mod+space		focus mode_toggle
@@ -143,16 +144,16 @@ bindsym $mod+semicolon		workspace next
 bindsym $mod+Shift+slash	kill
 bindsym $mod+backslash		workspace back_and_forth
 
-set $ws1 "1: Firefox "
-set $ws2 "2: Sublime "
-set $ws3 "3: Discord "
-set $ws4 "4: Music"
-set $ws5 "5: Steam "
-set $ws6 "6: Video "
-set $ws7 "7: Trans "
-set $ws8 "8: Vifm "
-set $ws9 "9: Spotify"
-set $ws10 "10: Terminals"
+set $ws1 "1: Firefox ☢️"
+set $ws2 "2: Sublime 🤬"
+set $ws3 "3: Discord ⚒️"
+set $ws4 "4: Music 🍭"
+set $ws5 "5: Steam 🎲"
+set $ws6 "6: Video 🎬"
+set $ws7 "7: Trans 🔰"
+set $ws8 "8: Vifm 🗃️"
+set $ws9 "9: Spotify 📀"
+set $ws10 "10: Terminals 🎯"
 
 # switch to workspace
 bindsym $mod+1		workspace $ws1
@@ -185,6 +186,8 @@ for_window [class="Gimp"] move workspace $ws5
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
 for_window [title="Default - Wine desktop"] floating enable
+
+#Assign application to workspace
 for_window [class="$BROWSER|Navigator|Firefox|firefox"] move to workspace $ws1 focus
 for_window [class="$TERMINAL|st"] move to workspace $ws10 focus
 for_window [class="subl|Subl"] move to workspace $ws2 focus
@@ -196,6 +199,7 @@ for_window [class="virtualbox|VirtualBox"] move to workspace $ws7 focus
 for_window [class="$TERMINAL -e $FILE|st -e vifm"] move to workspace $ws8 focus
 for_window [class="spotify|Spotify"] move to workspace $ws9 focus
 #for_window [class="discord|Discord"]focus
+
 
 # Bindings to make the webcam float and stick.
 for_window [title="mpvfloat"] floating enable
